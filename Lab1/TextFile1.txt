@@ -1,0 +1,33 @@
+﻿ÖVNING 1
+1. CLR står för common language runtime och är en virtuell maskin. Den översätter cil till maskinkod.
+2. BCL basic class library. Ett stort klassbiibliotek som används av NET ramverket oxh som man själn kan använda.
+3. Man översätter ett programspråk till ett annat som datorn förstår bättre.
+4. Common intermediate language
+5. JIT kompilering Just In Time Körs när programmet ska köras.
+6. Kan flyttas mellan olika windowssystem men kan få något sämre prestanda än om den exekverats direkt från maskinkod.
+
+ÖVNING 2
+1. Identifierare namnger variabler metoder parametrar klasser.
+2. Ska vara beskrivande. Första tecknet stor eller lite bokstav, underline eller @. Resterande får vara stor eller lite bokstav siffror och underline.
+3. camelCase börjar med lite bokstav och varje nytt ord är stor bokstav. PascalCase börjar alla ord med stor bokstav.
+4. Reserverade identifierare som som har speciell betydelse för kompilatorn.
+5. Det har betydelse om man använder stor eller liten bokstav. Börjar man t ex med stor bokstav på ett ställe i en identifierare måste man fortsätta med det.
+6. Ett mellanslag, returtangenttryckning, tab
+7. semikolon  ;
+8. {Mellan måsvingar}
+9. // för att kommentera en rad /* För att kommentera flera rader eller mitt i en rad*/   ///dokumentationskommentar innehåller xml text som kan användas för att göra programdokumentation.
+Man bör kommentera när man misslyckats vara tylig i källkoden.
+
+UPPGIFT 2
+Semikolon borta - blir build error semikolon förväntas
+Majn istället för Main - Saknade en static Main metod
+Klass istället för Class - A get or set accessor expected, type or namespace klass could not be found, invalid global code
+Saknas stänga måsvinge - } expected
+Bortkommenterat using system - The name concole does not exist in the current context
+
+UPPGIFT 3
+Använt samma värde flera gåger.
+Formaterat värdet till valuta
+Flyttat texten lite till höger och ställt in decimaler till endast 2 st.
+
+Tagit bort Lab1 cproj.. txt, exe och pdb, Lab1.exe.config

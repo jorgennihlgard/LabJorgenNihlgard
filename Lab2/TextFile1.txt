@@ -1,0 +1,21 @@
+﻿1. Vad innebär det att instantiera en typ?
+Man skapar ett nytt objekt, en kopia av klassen.
+
+2. En instans av en typ kan även kallas något annat, vad?
+Objekt
+
+3. C# skiljer på värdetyper och referenstyper. Placera följande typer i rätt kategori: int, string, bool, double, object, char
+Värdetyper:int, bool, double, char
+referenstyper: object och string
+
+4. Att skapa program i C# handlar ytterst sett om att definiera egna datatyper, som i sin tur använder andra typer. Nämn ett par olika sorters datatyper som kan skapas, både referenstyper och värdetyper.
+Värdetyper: struct enum
+Referenstyper: class interface delegat array
+
+5. Vad innebär stack och heap för ett C#-program?
+Där lagras all data. Värdetyper lägger sig på stacken (ex. int nr = 9;) medan referenstyper behöver både stacken och heapen där referensen lägger sig på stacken,
+ och datan den pekar på lägger sig på heapen.
+
+6. Vad är en variabel? Hur skapas en variabel? Vad innebär det att initiera en variabel? Vad menas med att tilldela en variabel ett värde?
+En variabel kan representera olika sorts data beroende på vilken typ det är. Den skapas genom att skriva typen och ett namn på variabeln ex. (int age;) Efter det kan man tilldela variabels ett värde 
+genom att skriva ett "=" och värdet. Initiera så ger man en oinitierad variabel ett värde.
