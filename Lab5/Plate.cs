@@ -15,7 +15,7 @@ namespace Lab5
 
         {
             get { return sort; }
-            set { if (value == "Deep" && value == "Flat")
+            set { if (value == "Deep" || value == "Flat")
                     sort = value;
                 else
                     throw new Exception("Only deep and flat is available");

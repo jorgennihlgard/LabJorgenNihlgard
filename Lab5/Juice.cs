@@ -8,20 +8,20 @@ namespace Lab5
 {
     class Juice : EcoStockItem 
     {
-        private string sort;
-
+        private string juiceSort;
+    
         public string Sort
         {
-            get { return sort; }
+            get { return juiceSort; }
             set {if (value == "Apple" || value == "Orange")
-                    sort = value;
+                    juiceSort = value;
                 else
                     throw new Exception("Only Apple and Orange is available");
             }
         }
         public override string ToString()
         {
-            return ($"Sort {sort} "+base.ToString());
+            return ($"Sort {juiceSort} "+base.ToString());
         }
 
     }
