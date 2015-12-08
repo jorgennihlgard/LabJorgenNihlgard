@@ -30,7 +30,10 @@ namespace Lab5
             get { return stockCount; }
             set { stockCount = value; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         public override string ToString()
         {
