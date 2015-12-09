@@ -8,8 +8,8 @@ namespace Lab5
 {
     class Stock
     {
-        int counter = 0;
-        StockItem[] stockItems = new StockItem[2] ;
+       private int counter = 0;
+        StockItem[] stockItems = new StockItem[6] ;
 
         public StockItem this[int index]
         {
@@ -30,18 +30,19 @@ namespace Lab5
        
         public void AddItem(StockItem item)
         {
-            for (int i = 0; i < item.Length; i++)
-            {
-                stockItems[i] =item;
-            }
+         
+            stockItems[counter] =item;
+            counter++;
+        }
 
           
-        }
+        
         public StockItem[] GetItem (int itemId)
         {
             Console.WriteLine(itemId);
             return stockItems;
         }
 
+      
     }
 }

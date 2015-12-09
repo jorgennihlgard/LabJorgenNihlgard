@@ -9,8 +9,8 @@ namespace Lab5
     class Juice : EcoStockItem 
     {
         private string juiceSort;
-    
-        public string Sort
+                        
+        public string JuiceSort
         {
             get { return juiceSort; }
             set {if (value == "Apple" || value == "Orange")
