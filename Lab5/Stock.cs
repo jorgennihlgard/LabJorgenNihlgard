@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lab5
 {
-    class Stock
+   public class Stock
     {
        private int counter = 0;
-        StockItem[] stockItems = new StockItem[6] ;
+      internal  StockItem[] stockItems = new StockItem[6] ;
 
         public StockItem this[int index]
         {
@@ -30,19 +30,26 @@ namespace Lab5
        
         public void AddItem(StockItem item)
         {
-         
-            stockItems[counter] =item;
+            
+            this[counter] =item;
             counter++;
         }
 
-          
-        
-        public StockItem[] GetItem (int itemId)
-        {
-            Console.WriteLine(itemId);
-            return stockItems;
+
+
+
+       public StockItem GetItem(int itemId)
+       {
+
+           for (int i = 0; i < stockItems.Length; i++)
+           {
+               if (stockItems[i].Id == itemId && stockItems[i]!= null)
+                   return stockItems[i];
+
+            }
+            throw new Exception("Finns ingen med det id:et");
         }
 
-      
+
     }
 }

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsOvning3", "Wind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5", "Lab5\Lab5.csproj", "{F1CE6FC8-ED71-471B-A8AA-8E44FE29DFFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6", "Lab6\Lab6.csproj", "{685F129A-3A61-41E0-93BA-5E0B831C994C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{F1CE6FC8-ED71-471B-A8AA-8E44FE29DFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1CE6FC8-ED71-471B-A8AA-8E44FE29DFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1CE6FC8-ED71-471B-A8AA-8E44FE29DFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685F129A-3A61-41E0-93BA-5E0B831C994C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685F129A-3A61-41E0-93BA-5E0B831C994C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685F129A-3A61-41E0-93BA-5E0B831C994C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685F129A-3A61-41E0-93BA-5E0B831C994C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
