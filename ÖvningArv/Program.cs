@@ -58,12 +58,12 @@ namespace ÖvningArv
 
             SUV suv = new SUV();
             suv.Drive();
-            Car car = suv;
+            Car car = (Car)suv;
             car.Drive();
           
             Car bil2 = new Car();
-            //SUV suv1 = (SUV)bil2;
-            //suv1.Drive();
+            SUV suv1 = (SUV)bil2;
+            suv1.Drive();
 
             //Uppgift7
 

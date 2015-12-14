@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lab5
 {
-   public class Stock
+   internal class Stock
     {
        private int counter = 0;
-      internal  StockItem[] stockItems = new StockItem[6] ;
+      internal  StockItem[] stockItems = new StockItem[10] ;
 
         public StockItem this[int index]
         {
@@ -40,16 +40,10 @@ namespace Lab5
 
        public StockItem GetItem(int itemId)
        {
-
-           for (int i = 0; i < stockItems.Length; i++)
-           {
-               if (stockItems[i].Id == itemId && stockItems[i]!= null)
-                   return stockItems[i];
-
-            }
-            throw new Exception("Finns ingen med det id:et");
-        }
+           return stockItems[itemId];
+         
+       }
 
 
-    }
+       }
 }

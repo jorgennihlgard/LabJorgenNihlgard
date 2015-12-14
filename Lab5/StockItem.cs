@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab5
 {
-   public class StockItem
+   internal class StockItem
     {
         private int id;
         private string name;
@@ -18,7 +18,7 @@ namespace Lab5
             set { id = value; }
         }
 
-       // public int Length { get; internal set; }
+      
 
         public string Name
         {

@@ -15,7 +15,7 @@ namespace Lab5
 
         {
             get { return sort; }
-            set { if (value == "deep" || value == "flat")
+            set { if (value.ToLower() == "deep" || value.ToLower() == "flat")
                     sort = value;
                 else
                     throw new Exception("Only deep and flat is available");
@@ -23,7 +23,7 @@ namespace Lab5
         }
         public override string ToString()
         {
-            return ($"deep or flat {sort}"+base.ToString());
+            return ($"Platesort: {sort} "+base.ToString());
         }
     }
 }

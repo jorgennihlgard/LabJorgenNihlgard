@@ -13,9 +13,8 @@ namespace Lab5
         public string Mark
         {
             get { return mark; }
-            set
-            {
-                if (value == "ABIO" && value == "AB")
+            set  {
+                if (value.ToLower() == "abio" || value.ToLower() == "ab")
                     mark = value;
                 else
                 {
@@ -26,7 +25,7 @@ namespace Lab5
 
         public override string ToString()
         {
-            return ($"Mark{Mark}"+base.ToString());
+            return ($" Mark: {Mark} "+base.ToString());
         }
     }
 }

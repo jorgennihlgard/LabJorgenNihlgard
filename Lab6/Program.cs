@@ -16,7 +16,7 @@ namespace Lab6
 
             Uppgift3();
 
-            //Uppgift4();
+            Uppgift4();
             Console.ReadLine();
 
 
@@ -25,6 +25,9 @@ namespace Lab6
         private static void Uppgift4()
         {
             MyDoubleType mdt1 = new MyDoubleType(15);
+            MyDoubleType gg = mdt1-15;
+            
+
             MyDoubleType mdt2 = mdt1 + 5;
             MyDoubleType mdt3 = mdt1 - 10;
             MyDoubleType mdt4 = new MyDoubleType(9);
@@ -53,6 +56,17 @@ namespace Lab6
 
             PointStruct pointStruct1 = (PointStruct)point3DStruct;
             Console.WriteLine($"Point 3D till Point X: {pointStruct1.X} Y: {pointStruct1.Y}");
+
+            //uppgift 5
+            Car car = new Car();
+            Suv suv = (Suv) car;
+            suv.Drive();
+            car.Drive();
+
+            Suv suv2=new Suv();
+            Car car2 = (Car) suv2;
+            car2.Drive();
+            suv2.Drive();
         }
     }
 }

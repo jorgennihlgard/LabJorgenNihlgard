@@ -13,28 +13,28 @@ namespace Lab5
         public string JuiceSort
         {
             get { return juiceSort; }
-            set {if (value == "apple" || value == "orange")
+            set {if (value.ToLower() == "apple" || value.ToLower() == "orange")
                     juiceSort = value;
                 else
                     throw new Exception("Only Apple and Orange is available");
             }
         }
 
-        public string Ju { get; private set; }
+        //public string Ju { get; private set; }
 
-        public Juice()
+        //public Juice()
 
-        {
+        //{
             
-        }
-        public Juice(string ju)
-        {
-            Ju = ju;
+        //}
+        //public Juice(string ju)
+        //{
+        //    Ju = ju;
 
-        }
+        //}
         public override string ToString()
         {
-            return ($"Sort {juiceSort} "+base.ToString());
+            return ($"Juicesort {juiceSort} "+base.ToString());
         }
 
     }

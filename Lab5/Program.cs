@@ -14,18 +14,18 @@ namespace Lab5
         static void Main(string[] args)
         {
             Plate plate1 = new Plate() { Id = 10008, Name = "plate", StockCount = 88, Sort = "flat" };
-            Juice juice = new Juice() { Id = 10009, Name = "Bravo", StockCount = 4, JuiceSort = "orange" };
-            Juice juice1 = new Juice() { Id = 10010, Name = "Stockmos", StockCount = 7, JuiceSort = "apple" };
-       
+            Juice juice = new Juice() { Id = 10009, Name = "Bravo", Mark = "ab", StockCount = 4, JuiceSort = "orange" };
+            Juice juice1 = new Juice() { Id = 10010, Name = "Stockmos", Mark = "abio", StockCount = 7, JuiceSort = "apple" };
+
             Stock stock = new Stock();
 
             stock.AddItem(plate1);
             stock.AddItem(juice);
             stock.AddItem(juice1);
-
+            int id = 0;
             int idPlate = 10000;
             int idJuice = 20000;
-
+            string whatEcoMark = "";
             //string[] qu = {"Vilket namn", "Hur mycket i lager", "Märkning"};
 
             //for (int i = 0; i < qu.Length; i++)
@@ -37,10 +37,10 @@ namespace Lab5
             //    {
             //        string ju = ee;
             //        stock.AddItem(new Juice(ju));
-                    
+
             //    }
             //}
-        
+
 
 
             bool loop = true;
@@ -53,48 +53,45 @@ namespace Lab5
                     Console.WriteLine("3-Lista varor");
                     Console.WriteLine("4-Avsluta");
 
-                    string answer = Console.ReadLine();
                     int outAnswer;
-                    bool answerResult = int.TryParse(answer, out outAnswer);
+                    bool answerResult = int.TryParse(Console.ReadLine(), out outAnswer);
                     if (answerResult)
                     {
                         switch (outAnswer)
                         {
                             case 1:
                                 Console.WriteLine("What item do you want to add, juice or plate?");
-                                string choice = Console.ReadLine();
+                                string itemChoice = Console.ReadLine();
 
-                                if (choice == "juice")
+                                if (itemChoice.ToLower() == "juice")
                                 {
                                     Console.WriteLine("Enter a name for the juice");
                                     string juiceName = Console.ReadLine();
 
-                                        Console.WriteLine("How many items do you want in you stock");
+                                    Console.WriteLine("How many items do you want in you stock");
                                     int stockJuice = int.Parse(Console.ReadLine());
+
+
 
                                     Console.WriteLine("Do you want apple or orangejuice");
                                     string fruitChoice = Console.ReadLine();
 
-                                    Console.WriteLine("Do you want your juice to be ecological, Y or N?");
-                                    string ecoOrNot = Console.ReadLine();
-                                    if (ecoOrNot.ToLower() == "y")
-                                    {
-                                        Console.WriteLine("Do you want AB or ABIO?");
-                                        string whatEcoMark = Console.ReadLine();
+                                    Console.WriteLine("Do you want AB or ABIO?");
+                                    whatEcoMark = Console.ReadLine();
 
-                                        Console.WriteLine("Your Id is " + idJuice);
-                                        idJuice++;
-                                    }
                                     stock.AddItem(new Juice()
                                     {
                                         Name = juiceName,
                                         Id = idJuice,
                                         JuiceSort = fruitChoice,
-                                        Mark = ecoOrNot,
+                                        Mark = whatEcoMark,
                                         StockCount = stockJuice
                                     });
+
+                                    idJuice++;
+                                    Console.WriteLine("Your Id is " + idJuice);
                                 }
-                                if (choice == "plate")
+                                if (itemChoice.ToLower() == "plate")
                                 {
                                     Console.WriteLine("Enter a name for the plate");
                                     string plateName = Console.ReadLine();
@@ -105,69 +102,71 @@ namespace Lab5
                                     Console.WriteLine("Are they deep or flat");
                                     string plateSort = Console.ReadLine();
 
-                                  
-                                    idPlate++;
-                                    Console.WriteLine("Your Id is: " +idPlate );
-
                                     stock.AddItem(new Plate()
                                     {
                                         Name = plateName,
                                         Id = idPlate,
                                         StockCount = stockPlate,
                                         Sort = plateSort
-
                                     });
+                                    idPlate++;
+                                    Console.WriteLine("Your Id is: " + idPlate);
                                 }
-                    break;
-                    case 2:
+                                else if (itemChoice != "juice" && itemChoice != "apple")
+                                {
+                                    throw new Exception("Answer should be juice or plate");
+                                }
+                                break;
+                            case 2:
                                 for (int i = 0; i < stock.stockItems.Length; i++)
                                 {
-                                    if (stock[i] != null)
-                                        Console.WriteLine(stock[i]);
+                                    if (stock.stockItems[i] != null)
+                                    {
+                                        Console.WriteLine(stock.GetItem(i));
+                                    }
                                 }
                                 Console.WriteLine("Vilken inventera");
                                 int idNumber = int.Parse(Console.ReadLine());
 
+                                for (int i = 0; i < stock.stockItems.Length; i++)
+                                {
+                                    if (stock.stockItems[i] != null && stock.stockItems[i].Id == idNumber)
+                                    {
+                                        id = idNumber;
+                                    }
+                                }
+
+                                if (idNumber != id)
+                                {
+                                    throw new Exception("Id number does not exist");
+                                }
+
                                 Console.WriteLine("Hur många");
                                 int newInventory = int.Parse(Console.ReadLine());
-                                stock.GetItem(idNumber);
+
                                 for (int i = 0; i < stock.stockItems.Length; i++)
                                 {
-
-                                     stock[i].StockCount = newInventory;
+                                    if (stock.stockItems[i] != null && stock.stockItems[i].Id == idNumber)
+                                    {
+                                        stock.stockItems[i].StockCount = newInventory;
+                                        Console.WriteLine("Stock på id " + idNumber + " ändrad");
+                                    }
                                 }
-                               
-                               
-                             
-                                
                                 break;
                             case 3:
-                                
-                                Console.WriteLine("Ekologiska varor");
-                                for (int i = 0; i < stock.stockItems.Length; i++)
-                                {
-                                    if (stock.stockItems[i] is EcoStockItem && stock.stockItems[i] != null)
-
-                                        Console.WriteLine(stock[i]);
-                                }
-                                Console.WriteLine("Ej ekologiska värden");
-                                for (int i = 0; i < stock.stockItems.Length; i++)
-                                    {
-                                        if (!(stock.stockItems[i] is EcoStockItem) && stock.stockItems[i]!= null)
-                                        {
-                                            Console.WriteLine(stock[i]);
-                                        }
-                                    }
+                                ListItems(stock);
                                 break;
-                     case 4:
-                                Console.WriteLine("Abort");
+                            case 4:
+                                Console.WriteLine("Thank you, welcome back!!");
                                 loop = false;
                                 break;
+
+                            default: throw new Exception("You can only choose between 1-4");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("You can only choose between 1-4");
+
                         throw new Exception("You can only choose between 1-4");
                     }
 
@@ -176,10 +175,29 @@ namespace Lab5
                 {
                     Console.WriteLine(e.Message);
                 }
-               
+
             }
-            Console.WriteLine("Thank you");
+         
             Console.ReadLine();
+        }
+
+        private static void ListItems(Stock stock)
+        {
+            Console.WriteLine("Ekologiska varor");
+            for (int i = 0; i < stock.stockItems.Length; i++)
+            {
+                if (stock.stockItems[i] is EcoStockItem && stock.stockItems[i] != null)
+
+                    Console.WriteLine(stock.GetItem(i));
+            }
+            Console.WriteLine("Ej ekologiska varor");
+            for (int i = 0; i < stock.stockItems.Length; i++)
+            {
+                if (!(stock.stockItems[i] is EcoStockItem) && stock.stockItems[i] != null)
+                {
+                    Console.WriteLine(stock.GetItem(i));
+                }
+            }
         }
     }
 }
