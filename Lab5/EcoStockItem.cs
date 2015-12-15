@@ -22,7 +22,6 @@ namespace Lab5
                 }
             }
         }
-
         public override string ToString()
         {
             return ($" Mark: {Mark} "+base.ToString());

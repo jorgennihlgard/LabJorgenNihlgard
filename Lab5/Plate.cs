@@ -11,19 +11,19 @@ namespace Lab5
         private string sort;
 
         public string Sort
-
-
         {
             get { return sort; }
-            set { if (value.ToLower() == "deep" || value.ToLower() == "flat")
+            set
+            {
+                if (value.ToLower() == "deep" || value.ToLower() == "flat")
                     sort = value;
                 else
                     throw new Exception("Only deep and flat is available");
-                }
+            }
         }
         public override string ToString()
         {
-            return ($"Platesort: {sort} "+base.ToString());
+            return ($"Platesort: {sort} " + base.ToString());
         }
     }
 }

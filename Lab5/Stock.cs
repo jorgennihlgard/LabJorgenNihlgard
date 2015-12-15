@@ -8,10 +8,9 @@ namespace Lab5
 {
    internal class Stock
     {
-       private int counter = 0;
-      internal  StockItem[] stockItems = new StockItem[10] ;
-
-        public StockItem this[int index]
+      private int counter = 0;
+      internal  StockItem[] stockItems = new StockItem[10];
+       public StockItem this[int index]
         {
             get {
                 if (index >= 0 && index < stockItems.Length)
@@ -26,24 +25,14 @@ namespace Lab5
                     throw new Exception("Out of boundery");
             }
         }
-       
-       
-        public void AddItem(StockItem item)
+       public void AddItem(StockItem item)
         {
-            
             this[counter] =item;
             counter++;
         }
-
-
-
-
        public StockItem GetItem(int itemId)
        {
            return stockItems[itemId];
-         
        }
-
-
-       }
+    }
 }

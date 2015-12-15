@@ -9,7 +9,6 @@ namespace Lab5
     class Juice : EcoStockItem 
     {
         private string juiceSort;
-                        
         public string JuiceSort
         {
             get { return juiceSort; }
@@ -19,23 +18,9 @@ namespace Lab5
                     throw new Exception("Only Apple and Orange is available");
             }
         }
-
-        //public string Ju { get; private set; }
-
-        //public Juice()
-
-        //{
-            
-        //}
-        //public Juice(string ju)
-        //{
-        //    Ju = ju;
-
-        //}
-        public override string ToString()
+       public override string ToString()
         {
             return ($"Juicesort {juiceSort} "+base.ToString());
         }
-
     }
 }

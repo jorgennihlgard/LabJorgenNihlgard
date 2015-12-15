@@ -17,9 +17,6 @@ namespace Lab5
             get { return id; }
             set { id = value; }
         }
-
-      
-
         public string Name
         {
             get { return name; }
@@ -30,12 +27,9 @@ namespace Lab5
             get { return stockCount; }
             set { stockCount = value; }
         }
-       
-
         public override string ToString()
         {
             return ($"Id: {id} Name: {Name} Stockcount: {stockCount}");
         }
-
     }
 }

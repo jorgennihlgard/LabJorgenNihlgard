@@ -21,7 +21,7 @@ namespace Lab6
 
         public static explicit operator PointStruct(Point3DStruct point3DStruct)
         {
-            return new PointStruct(3, 4);
+            return new PointStruct(7,4);
         }
     }
 }

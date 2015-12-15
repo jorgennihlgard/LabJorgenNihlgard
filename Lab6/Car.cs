@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,10 +59,14 @@ namespace Lab6
             Console.WriteLine("brum brum");
         }
 
-        public static explicit  operator Suv(Car car)
+        public static explicit operator Suv(Car car)
         {
-            return new Suv();
-       }
+            Suv suv = new Suv() {Brand = "Volvo",Color = "Lila",NrOfGears = 12, Type = "kombi",};
+            //suv.Color = car.Color;
+            //suv.Brand = car.Brand;
+            //suv.Type = car.Type;
+            return suv;
+        }
         public override string ToString()
         {
             return $"Typ: {Type} Märke: {Brand} Antal växlar: {NrOfGears} Färg: {Color} ";

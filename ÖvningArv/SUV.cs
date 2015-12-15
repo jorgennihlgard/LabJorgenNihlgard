@@ -7,10 +7,11 @@ using Lab4;
 
 namespace ÖvningArv
 {
-    class SUV :Car
+   public class SUV :Car
     {
+        public string Type { get; set; }
 
-     
+        public string Brand { get; set; }   
         public override void Drive()
         {
             Console.WriteLine("VROOM VROOM");

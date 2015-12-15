@@ -58,6 +58,7 @@ namespace Lab4
             Console.WriteLine("brum brum");
         }
 
+      
         public override string ToString()
         {
             return $"Typ: {Type} Märke: {Brand} Antal växlar: {NrOfGears} Färg: {Color} ";
